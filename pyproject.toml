@@ -52,7 +52,7 @@ dependencies = [
     # ("No ASR backend is ready"). Cap below 80 so pkg_resources stays present
     # (issue #224; also #58). Revisit when whisperx/faster-whisper drop the
     # pkg_resources dependency.
-    "setuptools>=75,<80",
+    "setuptools>=84.0.0,<85",
     "psutil>=7.2.2",
     # Pinned to 3.x — pyannote 4.x removed `use_auth_token` from `Inference`
     # which whisperx 3.4.2 still passes, blowing up `whisperx.load_model()`
@@ -123,7 +123,7 @@ dependencies = [
     # (Assumption A1 in RESEARCH.md was checked at execute-time and proved
     # false — `cryptography` is not on the install path today).
     "cryptography>=41",
-    "mcp>=1.28.1,<2",
+    "mcp>=1.30.0,<2",
     # Opt-in product analytics (core/analytics.py). Inert unless the build ships a
     # POSTHOG_PROJECT_TOKEN *and* the user opts in — default OFF. No exception
     # autocapture (it would ship raw tracebacks past core.failure.sanitize()).
@@ -143,7 +143,7 @@ dependencies = [
     # deps → identical behaviour on macOS/Windows/Linux (default-parity rule).
     # EPUB + plaintext stay stdlib-only; only PDF needs a real parser, and
     # pypdf is the lightest one that ships no C extensions.
-    "pypdf>=4.0",
+    "pypdf>=6.19.0",
     # LLM client for Cinematic dub refinement, glossary auto-extract, and
     # LLM-based translation (services.llm_backend / translator / dub_translate
     # all `from openai import OpenAI`). Talks to any OpenAI-compatible endpoint —
